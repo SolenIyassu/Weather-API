@@ -24,6 +24,7 @@ let date5 = document.querySelector(".date5");
 
 button.addEventListener("click", () => {
   localStorage.setItem("button", inputValue.value);
+
   fetch(
     "https://api.openweathermap.org/geo/1.0/direct?q=" +
       inputValue.value +
@@ -100,6 +101,15 @@ button.addEventListener("click", () => {
 
           console.log(data["list"][2]["clouds"]["dt_txt".value]);
           if (location.protocol === "http:") {
+            url =
+              "http://api.openweathermap.org/data/2.5/weather?q=" +
+              inputValue.value +
+              "APPID=37187cef71fd2277911f35c446211345";
+          } else {
+            url =
+              "https://api.openweathermap.org/data/2.5/weather?q=" +
+              inputValue.value +
+              "&APPID=37187cef71fd2277911f35c446211345";
           }
         });
     })
