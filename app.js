@@ -22,6 +22,7 @@ let date3 = document.querySelector(".date3");
 let date4 = document.querySelector(".date4");
 let date5 = document.querySelector(".date5");
 button.addEventListener("click", () => {
+  localStorage.setItem("button", inputValue.value);
   fetch(
     "http://api.openweathermap.org/geo/1.0/direct?q=" +
       inputValue.value +
