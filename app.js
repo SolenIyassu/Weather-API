@@ -21,10 +21,11 @@ let date2 = document.querySelector(".date2");
 let date3 = document.querySelector(".date3");
 let date4 = document.querySelector(".date4");
 let date5 = document.querySelector(".date5");
+
 button.addEventListener("click", () => {
   localStorage.setItem("button", inputValue.value);
   fetch(
-    "http://api.openweathermap.org/geo/1.0/direct?q=" +
+    "https://api.openweathermap.org/geo/1.0/direct?q=" +
       inputValue.value +
       "&APPID=37187cef71fd2277911f35c446211345"
   )
@@ -50,9 +51,10 @@ button.addEventListener("click", () => {
       //       console.log(data);
 
       fetch(
-        "http://api.openweathermap.org/data/2.5/forecast?q=" +
+        (url =
+          "https://api.openweathermap.org/data/2.5/forecast?q=" +
           inputValue.value +
-          "&appid=37187cef71fd2277911f35c446211345"
+          "&appid=37187cef71fd2277911f35c446211345")
       )
         .then((response) => response.json())
 
@@ -97,6 +99,8 @@ button.addEventListener("click", () => {
           console.log(data);
 
           console.log(data["list"][2]["clouds"]["dt_txt".value]);
+          if (location.protocol === "http:") {
+          }
         });
     })
     // })
