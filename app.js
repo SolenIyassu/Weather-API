@@ -50,7 +50,7 @@ button.addEventListener("click", () => {
       //       console.log(data);
 
       fetch(
-        "https://api.openweathermap.org/data/2.5/forecast?q=" +
+        "http://api.openweathermap.org/data/2.5/forecast?q=" +
           inputValue.value +
           "&appid=37187cef71fd2277911f35c446211345"
       )
