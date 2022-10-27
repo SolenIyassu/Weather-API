@@ -101,13 +101,11 @@ button.addEventListener("click", () => {
 
           console.log(data["list"][2]["clouds"]["dt_txt".value]);
           if (location.protocol === "http:") {
-            url =
-              "http://api.openweathermap.org/data/2.5/weather?q=" +
+            "http://api.openweathermap.org/data/2.5/weather?q=" +
               inputValue.value +
               "APPID=37187cef71fd2277911f35c446211345";
           } else {
-            url =
-              "https://api.openweathermap.org/data/2.5/weather?q=" +
+            "https://api.openweathermap.org/data/2.5/weather?q=" +
               inputValue.value +
               "&APPID=37187cef71fd2277911f35c446211345";
           }
